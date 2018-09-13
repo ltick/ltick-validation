@@ -1,9 +1,9 @@
 # ozzo-validation
 
-[![GoDoc](https://godoc.org/github.com/go-ozzo/ozzo-validation?status.png)](http://godoc.org/github.com/go-ozzo/ozzo-validation)
-[![Build Status](https://travis-ci.org/go-ozzo/ozzo-validation.svg?branch=master)](https://travis-ci.org/go-ozzo/ozzo-validation)
-[![Coverage Status](https://coveralls.io/repos/github/go-ozzo/ozzo-validation/badge.svg?branch=master)](https://coveralls.io/github/go-ozzo/ozzo-validation?branch=master)
-[![Go Report](https://goreportcard.com/badge/github.com/go-ozzo/ozzo-validation)](https://goreportcard.com/report/github.com/go-ozzo/ozzo-validation)
+[![GoDoc](https://godoc.org/github.com/ltick/ltick-validation?status.png)](http://godoc.org/github.com/ltick/ltick-validation)
+[![Build Status](https://travis-ci.org/ltick/ltick-validation.svg?branch=master)](https://travis-ci.org/ltick/ltick-validation)
+[![Coverage Status](https://coveralls.io/repos/github/ltick/ltick-validation/badge.svg?branch=master)](https://coveralls.io/github/ltick/ltick-validation?branch=master)
+[![Go Report](https://goreportcard.com/badge/github.com/ltick/ltick-validation)](https://goreportcard.com/report/github.com/ltick/ltick-validation)
 
 ## Description
 
@@ -36,8 +36,8 @@ or `validation.ValidateStruct()` to validate the value.
 Run the following command to install the package:
 
 ```
-go get github.com/go-ozzo/ozzo-validation
-go get github.com/go-ozzo/ozzo-validation/is
+go get github.com/ltick/ltick-validation
+go get github.com/ltick/ltick-validation/is
 ```
 
 ### Validating a Simple Value
@@ -50,8 +50,8 @@ package main
 import (
 	"fmt"
 
-	"github.com/go-ozzo/ozzo-validation"
-	"github.com/go-ozzo/ozzo-validation/is"
+	"github.com/ltick/ltick-validation"
+	"github.com/ltick/ltick-validation/is"
 )
 
 func main() {
@@ -87,8 +87,8 @@ import (
 	"fmt"
 	"regexp"
 
-	"github.com/go-ozzo/ozzo-validation"
-	"github.com/go-ozzo/ozzo-validation/is"
+	"github.com/ltick/ltick-validation"
+	"github.com/ltick/ltick-validation/is"
 )
 
 type Address struct {
