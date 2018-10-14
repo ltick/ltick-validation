@@ -50,7 +50,7 @@ type LengthRule struct {
 // Validate checks if the given value is valid or not.
 func (v *LengthRule) Validate(value interface{}) error {
 	value, isNil := Indirect(value)
-	if isNil || IsEmpty(value) {
+	if isNil {
 		return nil
 	}
 
