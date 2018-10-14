@@ -20,7 +20,7 @@ func TestLength(t *testing.T) {
 		err      string
 	}{
 		{"t1", 2, 4, "abc", ""},
-		{"t2", 2, 4, "", ""},
+		{"t2", 2, 4, "", "the length must be between 2 and 4"},
 		{"t3", 2, 4, "abcdf", "the length must be between 2 and 4"},
 		{"t4", 0, 4, "ab", ""},
 		{"t5", 0, 4, "abcde", "the length must be no more than 4"},
@@ -29,7 +29,7 @@ func TestLength(t *testing.T) {
 		{"t8", 2, 0, v, ""},
 		{"t9", 2, 0, 123, "cannot get the length of int"},
 		{"t10", 2, 4, sql.NullString{String: "abc", Valid: true}, ""},
-		{"t11", 2, 4, sql.NullString{String: "", Valid: true}, ""},
+		{"t11", 2, 4, sql.NullString{String: "", Valid: true}, "the length must be between 2 and 4"},
 		{"t12", 2, 4, &sql.NullString{String: "abc", Valid: true}, ""},
 	}
 
@@ -53,7 +53,7 @@ func TestRuneLength(t *testing.T) {
 		{"t1.2", 2, 3, "💥💥💥", ""},
 		{"t1.3", 2, 3, "💥", "the length must be between 2 and 3"},
 		{"t1.4", 2, 3, "💥💥💥💥", "the length must be between 2 and 3"},
-		{"t2", 2, 4, "", ""},
+		{"t2", 2, 4, "", "the length must be between 2 and 4"},
 		{"t3", 2, 4, "abcdf", "the length must be between 2 and 4"},
 		{"t4", 0, 4, "ab", ""},
 		{"t5", 0, 4, "abcde", "the length must be no more than 4"},
@@ -62,7 +62,7 @@ func TestRuneLength(t *testing.T) {
 		{"t8", 2, 0, v, ""},
 		{"t9", 2, 0, 123, "cannot get the length of int"},
 		{"t10", 2, 4, sql.NullString{String: "abc", Valid: true}, ""},
-		{"t11", 2, 4, sql.NullString{String: "", Valid: true}, ""},
+		{"t11", 2, 4, sql.NullString{String: "", Valid: true}, "the length must be between 2 and 4"},
 		{"t12", 2, 4, &sql.NullString{String: "abc", Valid: true}, ""},
 		{"t13", 2, 3, &sql.NullString{String: "💥💥", Valid: true}, ""},
 		{"t14", 2, 3, &sql.NullString{String: "💥", Valid: true}, "the length must be between 2 and 3"},

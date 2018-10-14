@@ -64,6 +64,9 @@ func (v *LengthRule) Validate(value interface{}) error {
 		return err
 	}
 
+	if v.max > 0 && v.min > v.max {
+		return fmt.Errorf("min length must be no less than max length(min:%v, max:%v)", v.min, v.max)
+	}
 	if v.min > 0 && l < v.min || v.max > 0 && l > v.max {
 		return errors.New(v.message)
 	}
