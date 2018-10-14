@@ -66,7 +66,7 @@ func (v *RangeRule) Validate(value interface{}) error {
 	case uint64:
 		f64 = float64(value.(uint))
 	case float32:
-		f64 = value.(float64)
+		f64 = float64(value.(float32))
 	case float64:
 		f64 = value.(float64)
 	}
