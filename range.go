@@ -71,9 +71,9 @@ func (v *RangeRule) Validate(value interface{}) error {
 		f64 = value.(float64)
 	}
 	if math.Min(f64, v.min) == f64 && math.Abs(f64-v.min) > accuracy {
-		return fmt.Errorf("smaller than %s: %v", v.min, value)
+		return fmt.Errorf("smaller than %f: %v", v.min, value)
 	} else if math.Max(f64, v.max) == f64 && math.Abs(f64-v.max) > accuracy {
-		return fmt.Errorf("bigger than %s: %v", v.max, value)
+		return fmt.Errorf("bigger than %f: %v", v.max, value)
 	}
 	return nil
 }
