@@ -69,6 +69,8 @@ func (v *RangeRule) Validate(value interface{}) error {
 		f64 = float64(value.(float32))
 	case float64:
 		f64 = value.(float64)
+	default:
+		return fmt.Errorf("invalid value type: %v", value)
 	}
 	if math.Min(f64, v.min) == f64 && math.Abs(f64-v.min) > accuracy {
 		return fmt.Errorf("smaller than %f: %v", v.min, value)

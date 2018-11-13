@@ -52,6 +52,8 @@ func LengthOfValue(value interface{}) (int, error) {
 	switch v.Kind() {
 	case reflect.String, reflect.Slice, reflect.Map, reflect.Array:
 		return v.Len(), nil
+	case reflect.Ptr, reflect.Interface:
+		return LengthOfValue(v.Elem().Interface())
 	}
 	return 0, fmt.Errorf("cannot get the length of %v", v.Kind())
 }
